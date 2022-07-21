@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+html{
+	box-sizing: border-box;
+	font-size: 62.5%; /*1rem = 10px*/
+}
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+body{
+	font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--Very-Light-Gray);
+}
+/* ESTILOS GENERALES */
+.container{
+    width: 90%;
+    margin: 10rem auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* HEADER */
+.header{
+    text-align: center;
+}
+.header__title{
+    font-size: 2.4rem;
+    font-weight: 200;
+}
+.header__subtitle{
+    font-size: 2.4rem;
+    margin-top: 1rem;
+    color: var(--Very-Dark-Blue);
+}
+.header__text{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--Grayish-Blue);
+    line-height: 1.5;
+}
+/* CARDS */
+.card-container{
+    margin-top: 4.8rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem 0;
+}
+.card{
+    
+    min-width: 32rem;
+    height: 22.3rem;
+    padding: 2.4rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 .8rem 1.6rem rgba(0, 0, 0, .185);
+}
+.card__title{
+    font-size: 2rem;
+    margin: 0;
+    color: var(--Very-Dark-Blue);
+}
+.card__text{
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--Grayish-Blue);
+}
+.card__img{
+    align-self: flex-end;
+}
+.card--supervisor{
+    border-top: 5px solid var(--Cyan);
+}
+.card--team{
+    border-top: 5px solid var(--Red);
+}
+.card--karma{
+    border-top: 5px solid var(--Orange);
+}
+.card--calculator{
+    border-top: 5px solid var(--Blue);
+}
+/* FOOTER */
+.attribution{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.attribution a{
+    color: var(--Red);
+}
+@media (min-width: 800px){
+    body{
+        font-size: 1.6rem;
+    }
+    /* HEADER */
+    .header__title, .header__subtitle{
+        font-size: 3rem;
+    }
+    .header__text{
+        font-size: 1.7rem;
+    }
+    /* CARDS */
+    .card-container{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    .card{
+        width: 35.3rem;
+        height: 25.3rem;
+        align-self: center;
+    }
+    .card__text{
+        font-size: 1.4rem;
+    }
+    .card--karma{
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    .card--supervisor{
+        grid-column: 1/2;
+    }
+    .card--supervisor, .card--calculator{
+        grid-row: 1/3;
+    }
+}
